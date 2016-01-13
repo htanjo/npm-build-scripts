@@ -3,9 +3,9 @@
   "scripts": {
     "start": "parallelshell \"npm run serve\" \"npm run watch\"",
     "serve": "browser-sync start --server app --no-notify --files app/",
-    "test": "eslint app/js/",
-    "build": "npm test && imagemin app/img/ app/img/",
-    "watch": "chokidar app/js/ -c \"npm test\""
+    "test": "eslint --ignore-pattern **/*.min.js,**/vendor/** app/",
+    "build": "npm test && imagemin app/ app/",
+    "watch": "chokidar app/**/*.js -c \"npm test\""
   },
   "devDependencies": {
     "browser-sync": "^2.11.0",
