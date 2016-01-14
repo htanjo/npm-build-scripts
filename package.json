@@ -3,20 +3,22 @@
   "scripts": {
     "start": "parallelshell \"npm run serve\" \"npm run watch:styles\" \"npm run watch:scripts\"",
     "serve": "browser-sync start --server app --no-notify --files app/",
-    "styles": "node-sass assets/ --output app/",
+    "styles": "node-sass assets/ --output app/ && postcss --use autoprefixer --replace app/**/*.css",
     "test": "eslint --ignore-pattern **/*.min.js,**/vendor/** app/",
-    "build": "npm test && npm run styles && imagemin app/ app/",
+    "build": "npm test && parallelshell \"npm run styles\" \"imagemin app/ app/\"",
     "watch:styles": "chokidar assets/**/*.scss -c \"npm run styles\"",
     "watch:scripts": "chokidar app/**/*.js -c \"npm test\""
   },
   "devDependencies": {
+    "autoprefixer": "^6.2.3",
     "browser-sync": "^2.11.0",
     "chokidar-cli": "^1.2.0",
     "eslint": "^1.10.3",
     "eslint-config-xo": "^0.9.1",
     "imagemin-cli": "^2.1.0",
     "node-sass": "^3.4.2",
-    "parallelshell": "^2.0.0"
+    "parallelshell": "^2.0.0",
+    "postcss-cli": "^2.3.3"
   },
   "eslintConfig": {
     "extends": "xo",
