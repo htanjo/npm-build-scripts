@@ -10,12 +10,12 @@
 
 ## Getting started
 1. Download **[package.json](https://github.com/htanjo/npm-build-scripts/raw/master/package.json)**.
-2. Create `app` directory and place your web contents in it.
+2. Create **`app`** directory and place your web contents in it.
 
    ```
    your-project/
-   ├── app/          : Static web contents
-   └── package.json
+   ├── app/           : Static web contents
+   └── package.json   : Download from this repository
    ```
 
 3. Install dependencies.
@@ -34,3 +34,6 @@
 
 - **`npm run`**  
   Show all available tasks.
+
+## License
+Copyright (c) 2016 Hiroyuki Tanjo. Licensed under the [MIT License](LICENSE).
