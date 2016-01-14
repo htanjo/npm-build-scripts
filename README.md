@@ -11,15 +11,18 @@
 ## Getting started
 1. Download **[package.json](https://github.com/htanjo/npm-build-scripts/raw/master/package.json)**.
 2. Create `app` directory and place your web contents in it.
- ```
- your-project/
- ├── app/          : Static web contents
- └── package.json
- ```
+
+   ```
+   your-project/
+   ├── app/          : Static web contents
+   └── package.json
+   ```
+
 3. Install dependencies.
- ```
- $ npm install
- ```
+
+   ```
+   $ npm install
+   ```
 
 ## Commands
 - **`npm start`**  
