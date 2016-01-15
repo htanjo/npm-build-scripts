@@ -2,17 +2,17 @@
 > Simple build scripts for frontend development based on npm.
 
 ## Features
-- [Browsersync](https://www.browsersync.io/) server
-- Image optimization
-- [ESLint](http://eslint.org/)
-- [Sass](http://sass-lang.com/) compiling
-- [Autoprefixer](https://github.com/postcss/autoprefixer)
+- **[Browsersync](https://www.browsersync.io/)** : Keep multiple browsers & devices in sync when building websites.
+- **[Imagemin](https://github.com/imagemin/imagemin)** : Minify images: JPEG, PNG, GIF and SVG.
+- **[ESLint](http://eslint.org/)** : Lint ECMAScript/JavaScript code.
+- **[Sass](http://sass-lang.com/)** : Compile Sass stylesheets to CSS.
+- **[Autoprefixer](https://github.com/postcss/autoprefixer)** : Add vendor prefixes to CSS rules.
 
 ## Downloads
 |                     | Mini     | +Lint    | +Styles  | Full     |
 |--------------------:|:--------:|:--------:|:--------:|:--------:|
 | Browsersync         | ✔       | ✔       | ✔       | ✔       |
-| Image optimization  | ✔       | ✔       | ✔       | ✔       |
+| Imagemin            | ✔       | ✔       | ✔       | ✔       |
 | ESLint              | -        | ✔       | -        | ✔       |
 | Sass & Autoprefixer | -        | -        | ✔       | ✔       |
 |                     | **[Download][mini]** | **[Download][lint]** | **[Download][styles]** | **[Download][full]** |
