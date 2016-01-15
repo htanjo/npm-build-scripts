@@ -24,6 +24,19 @@
    $ npm install
    ```
 
+### Sass coding
+If you want to code stylesheets in Sass, create `src` directory and put `scss` files in it.  
+CSS files will be generated in `public` keeping the subdirectory structure.
+
+```
+src/index.scss
+src/assets/styles/main.scss
+src/assets/styles/_partial.scss     # Partial will not be generated to a CSS file
+↓
+public/index.css
+public/assets/styles/main.css
+```
+
 ## Commands
 - **`npm start`**  
   Start local development server.  
