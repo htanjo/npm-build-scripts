@@ -62,6 +62,7 @@ public/assets/styles/main.css
 
 - **`npm run`**  
   Show all available tasks.
+  See [npm-run-script document](https://docs.npmjs.com/cli/run-script) for more details.
 
 ## License
 Copyright (c) 2016 Hiroyuki Tanjo. Licensed under the [MIT License](LICENSE).
