@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "parallelshell \"npm run serve\" \"npm run watch:styles\"",
+    "serve": "browser-sync start --server public --no-notify --files public/",
+    "styles": "node-sass src/ --output public/ && postcss --use autoprefixer --replace public/**/*.css",
+    "build": "parallelshell \"npm run styles\" \"imagemin public/ public/\"",
+    "watch:styles": "chokidar src/**/*.scss -c \"npm run styles\""
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.2.3",
+    "browser-sync": "^2.11.0",
+    "chokidar-cli": "^1.2.0",
+    "imagemin-cli": "^2.1.0",
+    "node-sass": "^3.4.2",
+    "parallelshell": "^2.0.0",
+    "postcss-cli": "^2.3.3"
+  }
+}
