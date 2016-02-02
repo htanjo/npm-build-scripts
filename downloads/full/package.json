@@ -3,11 +3,11 @@
   "scripts": {
     "start": "parallelshell \"npm run serve\" \"npm run watch:styles\" \"npm run watch:scripts\"",
     "serve": "browser-sync start --server public --no-notify --files public/",
-    "styles": "node-sass src/ --output public/ && postcss --use autoprefixer --replace public/**/*.css",
-    "test": "eslint --ignore-pattern **/*.min.js,**/vendor/** public/",
+    "styles": "node-sass public/ --output public/ && postcss --use autoprefixer --replace 'public/**/*.css'",
+    "test": "eslint --ignore-pattern '**/*.min.js,**/vendor/**' public/",
     "build": "npm test && parallelshell \"npm run styles\" \"imagemin public/ public/\"",
-    "watch:styles": "chokidar src/**/*.scss -c \"npm run styles\"",
-    "watch:scripts": "chokidar public/**/*.js -c \"npm test\""
+    "watch:styles": "chokidar 'public/**/*.scss' -c \"npm run styles\"",
+    "watch:scripts": "chokidar 'public/**/*.js' -c \"npm test\""
   },
   "devDependencies": {
     "autoprefixer": "^6.2.3",
