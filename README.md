@@ -11,10 +11,10 @@
 ## Downloads
 |                     | Mini     | +Lint    | +Styles  | Full     |
 |--------------------:|:--------:|:--------:|:--------:|:--------:|
-| Browsersync         | ✔       | ✔       | ✔       | ✔       |
-| Imagemin            | ✔       | ✔       | ✔       | ✔       |
-| ESLint              | -        | ✔       | -        | ✔       |
-| Sass & Autoprefixer | -        | -        | ✔       | ✔       |
+| Browsersync         | ✓       | ✓       | ✓       | ✓       |
+| Imagemin            | ✓       | ✓       | ✓       | ✓       |
+| ESLint              | -        | ✓       | -        | ✓       |
+| Sass & Autoprefixer | -        | -        | ✓       | ✓       |
 |                     | **[Download][mini]** | **[Download][lint]** | **[Download][styles]** | **[Download][full]** |
 
 ## How to use
@@ -44,12 +44,10 @@ If you want to code stylesheets in Sass, just create Sass files in `public`.
 CSS will be generated in the same folder.
 
 ```
-public/index.scss
-public/assets/styles/main.scss
-public/assets/styles/_partial.scss     # Partial will not be generated to a CSS file
+public/styles/main.scss
+public/styles/_partial.scss     # Partial will not be generated to a CSS file
  ↓
-public/index.css
-public/assets/styles/main.css
+public/styles/main.css
 ```
 
 ## Commands
