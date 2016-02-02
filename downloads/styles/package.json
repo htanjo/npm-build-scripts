@@ -3,9 +3,9 @@
   "scripts": {
     "start": "parallelshell \"npm run serve\" \"npm run watch:styles\"",
     "serve": "browser-sync start --server public --no-notify --files public/",
-    "styles": "node-sass src/ --output public/ && postcss --use autoprefixer --replace public/**/*.css",
+    "styles": "node-sass public/ --output public/ && postcss --use autoprefixer --replace \"public/**/*.css\"",
     "build": "parallelshell \"npm run styles\" \"imagemin public/ public/\"",
-    "watch:styles": "chokidar src/**/*.scss -c \"npm run styles\""
+    "watch:styles": "chokidar \"public/**/*.scss\" -c \"npm run styles\""
   },
   "devDependencies": {
     "autoprefixer": "^6.2.3",
