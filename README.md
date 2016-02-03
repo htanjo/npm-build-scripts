@@ -55,6 +55,9 @@ public/styles/main.css
   Start local development server.  
   During development, Sass compiler and ESLint will run automatically when you save a file.
 
+- **`npm test`**  
+  Run ESLint.
+
 - **`npm run build`**  
   Run ESLint, compile Sass to CSS and optimize images.
 
