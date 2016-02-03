@@ -1,13 +1,17 @@
 {
   "private": true,
   "scripts": {
-    "start": "parallelshell \"npm run serve\" \"npm run watch:styles\" \"npm run watch:scripts\"",
-    "serve": "browser-sync start --server public --no-notify --files public/",
-    "styles": "node-sass public/ --output public/ && postcss --use autoprefixer --replace \"public/**/*.css\"",
-    "test": "eslint --ignore-pattern \"**/*.min.js,**/vendor/**\" public/",
-    "build": "npm test && parallelshell \"npm run styles\" \"imagemin public/ public/\"",
-    "watch:styles": "chokidar \"public/**/*.scss\" -c \"npm run styles\"",
-    "watch:scripts": "chokidar \"public/**/*.js\" -c \"npm test\""
+    "start": "npm-run-all --parallel serve watch:*",
+    "test": "npm-run-all --parallel lint:*",
+    "build": "npm-run-all lint:* --parallel build:* minify:*",
+    "lint:scripts": "eslint --ignore-pattern \"**/*.min.js,**/vendor/**\" public/",
+    "build:styles": "npm-run-all build:styles:*",
+    "build:styles:sass": "node-sass public/ --output public/",
+    "build:styles:postcss": "postcss --use autoprefixer --replace \"public/**/*.css\"",
+    "minify:images": "imagemin \"public/**/*.{gif,jpg,png,svg}\" public/",
+    "watch:styles": "chokidar \"public/**/*.scss\" -c \"npm run build:styles\"",
+    "watch:scripts": "chokidar \"public/**/*.js\" -c \"npm run lint:scripts\"",
+    "serve": "browser-sync start --server public --no-notify --files public/"
   },
   "devDependencies": {
     "autoprefixer": "^6.2.3",
@@ -17,7 +21,7 @@
     "eslint-config-xo": "^0.9.1",
     "imagemin-cli": "^2.1.0",
     "node-sass": "^3.4.2",
-    "parallelshell": "^2.0.0",
+    "npm-run-all": "^1.5.1",
     "postcss-cli": "^2.3.3"
   },
   "eslintConfig": {

@@ -2,11 +2,13 @@
   "private": true,
   "scripts": {
     "start": "npm run serve",
-    "serve": "browser-sync start --server public --no-notify --files public/",
-    "build": "imagemin public/ public/"
+    "build": "npm-run-all --parallel minify:*",
+    "minify:images": "imagemin \"public/**/*.{gif,jpg,png,svg}\" public/",
+    "serve": "browser-sync start --server public --no-notify --files public/"
   },
   "devDependencies": {
     "browser-sync": "^2.11.0",
-    "imagemin-cli": "^2.1.0"
+    "imagemin-cli": "^2.1.0",
+    "npm-run-all": "^1.5.1"
   }
 }

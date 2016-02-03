@@ -1,11 +1,13 @@
 {
   "private": true,
   "scripts": {
-    "start": "parallelshell \"npm run serve\" \"npm run watch:scripts\"",
-    "serve": "browser-sync start --server public --no-notify --files public/",
-    "test": "eslint --ignore-pattern \"**/*.min.js,**/vendor/**\" public/",
-    "build": "npm test && imagemin public/ public/",
-    "watch:scripts": "chokidar \"public/**/*.js\" -c \"npm test\""
+    "start": "npm-run-all --parallel serve watch:*",
+    "test": "npm-run-all --parallel lint:*",
+    "build": "npm-run-all lint:* --parallel minify:*",
+    "lint:scripts": "eslint --ignore-pattern \"**/*.min.js,**/vendor/**\" public/",
+    "minify:images": "imagemin \"public/**/*.{gif,jpg,png,svg}\" public/",
+    "watch:scripts": "chokidar \"public/**/*.js\" -c \"npm run lint:scripts\"",
+    "serve": "browser-sync start --server public --no-notify --files public/"
   },
   "devDependencies": {
     "browser-sync": "^2.11.0",
@@ -13,7 +15,7 @@
     "eslint": "^1.10.3",
     "eslint-config-xo": "^0.9.1",
     "imagemin-cli": "^2.1.0",
-    "parallelshell": "^2.0.0"
+    "npm-run-all": "^1.5.1"
   },
   "eslintConfig": {
     "extends": "xo",
