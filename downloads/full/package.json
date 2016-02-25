@@ -4,7 +4,7 @@
     "start": "npm-run-all --parallel serve watch:*",
     "test": "npm-run-all --parallel lint:*",
     "build": "npm-run-all --parallel lint:* --parallel build:*",
-    "lint:scripts": "eslint --ignore-pattern \"**/*.min.js,**/vendor/**\" public/",
+    "lint:scripts": "eslint --ignore-pattern \"**/*.min.js\" --ignore-pattern \"**/vendor/**\" public/",
     "build:styles": "npm-run-all build:styles:*",
     "build:styles:sass": "node-sass public/ --output public/",
     "build:styles:postcss": "postcss --use autoprefixer --replace \"public/**/*.css\"",
@@ -17,26 +17,14 @@
     "autoprefixer": "^6.2.3",
     "browser-sync": "^2.11.0",
     "chokidar-cli": "^1.2.0",
-    "eslint": "^1.10.3",
-    "eslint-config-xo": "^0.9.1",
+    "eslint": "^2.2.0",
+    "eslint-config-xo-space": "^0.9.0",
     "imagemin-cli": "^2.1.0",
     "node-sass": "^3.4.2",
     "npm-run-all": "^1.5.1",
     "postcss-cli": "^2.3.3"
   },
   "eslintConfig": {
-    "extends": "xo",
-    "env": {
-      "browser": true
-    },
-    "rules": {
-      "indent": [
-        2,
-        2,
-        {
-          "SwitchCase": 1
-        }
-      ]
-    }
+    "extends": "xo-space/browser"
   }
 }

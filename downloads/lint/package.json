@@ -4,7 +4,7 @@
     "start": "npm-run-all --parallel serve watch:*",
     "test": "npm-run-all --parallel lint:*",
     "build": "npm-run-all --parallel lint:* --parallel build:*",
-    "lint:scripts": "eslint --ignore-pattern \"**/*.min.js,**/vendor/**\" public/",
+    "lint:scripts": "eslint --ignore-pattern \"**/*.min.js\" --ignore-pattern \"**/vendor/**\" public/",
     "build:images": "imagemin \"public/**/*.{gif,jpg,png,svg}\" public/",
     "watch:scripts": "chokidar \"public/**/*.js\" -c \"npm run lint:scripts\"",
     "serve": "browser-sync start --server public --no-notify --files public/"
@@ -12,24 +12,12 @@
   "devDependencies": {
     "browser-sync": "^2.11.0",
     "chokidar-cli": "^1.2.0",
-    "eslint": "^1.10.3",
-    "eslint-config-xo": "^0.9.1",
+    "eslint": "^2.2.0",
+    "eslint-config-xo-space": "^0.9.0",
     "imagemin-cli": "^2.1.0",
     "npm-run-all": "^1.5.1"
   },
   "eslintConfig": {
-    "extends": "xo",
-    "env": {
-      "browser": true
-    },
-    "rules": {
-      "indent": [
-        2,
-        2,
-        {
-          "SwitchCase": 1
-        }
-      ]
-    }
+    "extends": "xo-space/browser"
   }
 }
