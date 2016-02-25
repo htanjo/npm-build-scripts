@@ -2,11 +2,11 @@
   "private": true,
   "scripts": {
     "start": "npm-run-all --parallel serve watch:*",
-    "build": "npm-run-all --parallel build:* minify:*",
+    "build": "npm-run-all --parallel build:*",
     "build:styles": "npm-run-all build:styles:*",
     "build:styles:sass": "node-sass public/ --output public/",
     "build:styles:postcss": "postcss --use autoprefixer --replace \"public/**/*.css\"",
-    "minify:images": "imagemin \"public/**/*.{gif,jpg,png,svg}\" public/",
+    "build:images": "imagemin \"public/**/*.{gif,jpg,png,svg}\" public/",
     "watch:styles": "chokidar \"public/**/*.scss\" -c \"npm run build:styles\"",
     "serve": "browser-sync start --server public --no-notify --files public/"
   },

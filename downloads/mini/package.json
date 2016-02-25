@@ -2,8 +2,8 @@
   "private": true,
   "scripts": {
     "start": "npm run serve",
-    "build": "npm-run-all --parallel minify:*",
-    "minify:images": "imagemin \"public/**/*.{gif,jpg,png,svg}\" public/",
+    "build": "npm-run-all --parallel build:*",
+    "build:images": "imagemin \"public/**/*.{gif,jpg,png,svg}\" public/",
     "serve": "browser-sync start --server public --no-notify --files public/"
   },
   "devDependencies": {

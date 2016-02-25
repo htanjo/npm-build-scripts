@@ -3,9 +3,9 @@
   "scripts": {
     "start": "npm-run-all --parallel serve watch:*",
     "test": "npm-run-all --parallel lint:*",
-    "build": "npm-run-all lint:* --parallel minify:*",
+    "build": "npm-run-all --parallel lint:* --parallel build:*",
     "lint:scripts": "eslint --ignore-pattern \"**/*.min.js,**/vendor/**\" public/",
-    "minify:images": "imagemin \"public/**/*.{gif,jpg,png,svg}\" public/",
+    "build:images": "imagemin \"public/**/*.{gif,jpg,png,svg}\" public/",
     "watch:scripts": "chokidar \"public/**/*.js\" -c \"npm run lint:scripts\"",
     "serve": "browser-sync start --server public --no-notify --files public/"
   },
