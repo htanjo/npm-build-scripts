@@ -68,7 +68,7 @@ public/styles/main.css
 ## License
 Copyright (c) 2016 Hiroyuki Tanjo. Licensed under the [MIT License](LICENSE).
 
-[mini]: downloads/mini/package.json?raw=true
-[lint]: downloads/lint/package.json?raw=true
-[styles]: downloads/styles/package.json?raw=true
-[full]: downloads/full/package.json?raw=true
+[mini]: scripts/mini/package.json?raw=true
+[lint]: scripts/lint/package.json?raw=true
+[styles]: scripts/styles/package.json?raw=true
+[full]: scripts/full/package.json?raw=true
