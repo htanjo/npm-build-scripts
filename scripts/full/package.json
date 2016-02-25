@@ -6,7 +6,7 @@
     "build": "npm-run-all --parallel lint:* --parallel build:*",
     "lint:scripts": "eslint --ignore-pattern \"**/*.min.js\" --ignore-pattern \"**/vendor/**\" public/",
     "build:styles": "npm-run-all build:styles:*",
-    "build:styles:sass": "node-sass public/ --output public/",
+    "build:styles:sass": "node-sass public/ --output public/ --output-style expanded",
     "build:styles:postcss": "postcss --use autoprefixer --replace \"public/**/*.css\"",
     "build:images": "imagemin \"public/**/*.{gif,jpg,png,svg}\" public/",
     "watch:styles": "chokidar \"public/**/*.scss\" -c \"npm run build:styles\"",
